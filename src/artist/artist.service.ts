@@ -14,23 +14,4 @@ export class ArtistService {
   async create(dto: CreateArtistDto): Promise<Artist> {
     return await this.artistModel.create(dto)
   }
-
-  async find(): Promise<Artist[]> {
-    return await this.artistModel.find()
-  }
-
-  async findById(_id: ObjectId): Promise<Artist> {
-    return await this.artistModel.findById({ _id })
-  }
-
-  async findByIdAndUpdate(
-    _id: ObjectId,
-    dto: UpdateArtistDto
-  ): Promise<Artist> {
-    return await this.artistModel.findByIdAndUpdate(_id, dto, { new: true })
-  }
-
-  async findByIdAndDelete(_id: ObjectId): Promise<Artist> {
-    return await this.artistModel.findByIdAndDelete({ _id })
-  }
 }

@@ -6,7 +6,6 @@ import {
   Param,
   Patch,
   Post,
-  Res,
 } from '@nestjs/common'
 import { ObjectId } from 'mongoose'
 import { CreateArtistDto } from './dto/create-artist.dto'
@@ -39,5 +38,10 @@ export class ArtistController {
     @Body() dto: UpdateArtistDto
   ): Promise<Artist> {
     return await this.artistService.findByIdAndUpdate(_id, dto)
+  }
+
+  @Delete(':_id')
+  async findByIdAndDelete(@Param('_id') _id: ObjectId) {
+    return await this.artistService.findByIdAndDelete(_id)
   }
 }

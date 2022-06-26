@@ -14,4 +14,8 @@ export class ArtistService {
   async create(dto: CreateArtistDto): Promise<Artist> {
     return await this.artistModel.create(dto)
   }
+
+  async find(): Promise<Artist[]> {
+    return await this.artistModel.find()
+  }
 }

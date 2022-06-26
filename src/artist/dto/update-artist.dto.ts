@@ -1,4 +1,4 @@
 export class UpdateArtistDto {
-  readonly title: string
+  readonly name: string
   readonly avatar: string
 }

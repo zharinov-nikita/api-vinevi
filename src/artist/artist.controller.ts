@@ -32,4 +32,12 @@ export class ArtistController {
   async findById(@Param('_id') _id: ObjectId): Promise<Artist> {
     return await this.artistService.findById(_id)
   }
+
+  @Patch(':_id')
+  async findByIdAndUpdate(
+    @Param('_id') _id: ObjectId,
+    @Body() dto: UpdateArtistDto
+  ): Promise<Artist> {
+    return await this.artistService.findByIdAndUpdate(_id, dto)
+  }
 }

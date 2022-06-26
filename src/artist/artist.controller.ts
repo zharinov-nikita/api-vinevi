@@ -27,4 +27,9 @@ export class ArtistController {
   async find(): Promise<Artist[]> {
     return await this.artistService.find()
   }
+
+  @Get(':_id')
+  async findById(@Param('_id') _id: ObjectId): Promise<Artist> {
+    return await this.artistService.findById(_id)
+  }
 }

@@ -22,4 +22,9 @@ export class ArtistController {
   async create(@Body() dto: CreateArtistDto): Promise<Artist> {
     return await this.artistService.create(dto)
   }
+
+  @Get()
+  async find(): Promise<Artist[]> {
+    return await this.artistService.find()
+  }
 }

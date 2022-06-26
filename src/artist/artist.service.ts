@@ -29,4 +29,8 @@ export class ArtistService {
   ): Promise<Artist> {
     return await this.artistModel.findByIdAndUpdate(_id, dto, { new: true })
   }
+
+  async findByIdAndDelete(_id: ObjectId): Promise<Artist> {
+    return await this.artistModel.findByIdAndDelete({ _id })
+  }
 }

@@ -18,4 +18,8 @@ export class ArtistService {
   async find(): Promise<Artist[]> {
     return await this.artistModel.find()
   }
+
+  async findById(_id: ObjectId): Promise<Artist> {
+    return await this.artistModel.findById({ _id })
+  }
 }

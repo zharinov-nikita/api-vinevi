@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import mongoose, { Document } from 'mongoose'
-import { Artist } from 'src/artist/artist.schema'
+import mongoose, { Document, ObjectId } from 'mongoose'
 
 export type AlbumDocument = Album & Document
 
@@ -13,7 +12,7 @@ export class Album {
   cover: string
 
   @Prop({ type: [{ type: mongoose.Types.ObjectId, ref: 'Artist' }] })
-  artistId: Artist
+  artistId: ObjectId
 }
 
 export const AlbumSchema = SchemaFactory.createForClass(Album)

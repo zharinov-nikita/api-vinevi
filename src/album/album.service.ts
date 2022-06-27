@@ -22,4 +22,8 @@ export class AlbumService {
   async findById(_id: ObjectId): Promise<Album> {
     return await this.albumModel.findById({ _id })
   }
+
+  async findByIdAndUpdate(_id: ObjectId, dto: UpdateAlbumDto): Promise<Album> {
+    return await this.albumModel.findByIdAndUpdate(_id, dto, { new: true })
+  }
 }

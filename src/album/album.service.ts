@@ -14,4 +14,8 @@ export class AlbumService {
   async create(dto: CreateAlbumDto): Promise<Album> {
     return await this.albumModel.create(dto)
   }
+
+  async find(): Promise<Album[]> {
+    return await this.albumModel.find()
+  }
 }

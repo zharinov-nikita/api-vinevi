@@ -21,4 +21,9 @@ export class TrackController {
   async create(@Body() dto: CreateTrackDto): Promise<Track> {
     return await this.trackService.create(dto)
   }
+
+  @Get()
+  async find(): Promise<Track[]> {
+    return await this.trackService.find()
+  }
 }

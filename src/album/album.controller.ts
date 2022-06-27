@@ -31,4 +31,12 @@ export class AlbumController {
   async findById(@Param('_id') _id: ObjectId): Promise<Album> {
     return await this.albumService.findById(_id)
   }
+
+  @Patch(':_id')
+  async findByIdAndUpdate(
+    @Param('_id') _id: ObjectId,
+    @Body() dto: UpdateAlbumDto
+  ): Promise<Album> {
+    return await this.albumService.findByIdAndUpdate(_id, dto)
+  }
 }

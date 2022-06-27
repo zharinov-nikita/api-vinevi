@@ -21,4 +21,9 @@ export class AlbumController {
   async create(@Body() dto: CreateAlbumDto): Promise<Album> {
     return await this.albumService.create(dto)
   }
+
+  @Get()
+  async find(): Promise<Album[]> {
+    return await this.albumService.find()
+  }
 }

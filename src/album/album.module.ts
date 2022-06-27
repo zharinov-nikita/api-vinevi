@@ -9,5 +9,6 @@ import { AlbumService } from './album.service'
     MongooseModule.forFeature([{ name: Album.name, schema: AlbumSchema }]),
   ],
   controllers: [AlbumController],
+  providers: [AlbumService],
 })
 export class AlbumModule {}

@@ -11,7 +11,9 @@ export class Album {
   @Prop({ type: String, required: true })
   cover: string
 
-  @Prop({ type: [{ type: mongoose.Types.ObjectId, ref: 'Artist' }] })
+  @Prop({
+    type: [{ type: mongoose.Types.ObjectId, ref: 'Artist', required: true }],
+  })
   artistId: ObjectId
 }
 

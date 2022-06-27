@@ -1,11 +1,15 @@
 import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
+import { AlbumModule } from './album/album.module'
+import { ArtistModule } from './artist/artist.module'
+import { TrackModule } from './track/track.module'
 
 @Module({
-    imports: [MongooseModule.forRoot('mongodb://localhost:27017/api-vinevi')],
-    controllers: [AppController],
-    providers: [AppService],
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost:27017/api-vinevi'),
+    ArtistModule,
+    AlbumModule,
+    TrackModule,
+  ],
 })
 export class AppModule {}

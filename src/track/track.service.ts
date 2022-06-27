@@ -18,4 +18,8 @@ export class TrackService {
   async find(): Promise<Track[]> {
     return await this.trackModel.find()
   }
+
+  async findById(_id: ObjectId): Promise<Track> {
+    return await this.trackModel.findById({ _id })
+  }
 }

@@ -26,4 +26,8 @@ export class TrackService {
   async findByIdAndUpdate(_id: ObjectId, dto: UpdateTrackDto): Promise<Track> {
     return await this.trackModel.findByIdAndUpdate(_id, dto, { new: true })
   }
+
+  async findByIdAndDelete(_id: ObjectId): Promise<Track> {
+    return await this.trackModel.findByIdAndDelete({ _id })
+  }
 }

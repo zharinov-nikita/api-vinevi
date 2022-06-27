@@ -26,4 +26,9 @@ export class TrackController {
   async find(): Promise<Track[]> {
     return await this.trackService.find()
   }
+
+  @Get(':_id')
+  async findById(@Param('_id') _id: ObjectId): Promise<Track> {
+    return await this.trackService.findById(_id)
+  }
 }

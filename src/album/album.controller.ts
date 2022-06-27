@@ -39,4 +39,9 @@ export class AlbumController {
   ): Promise<Album> {
     return await this.albumService.findByIdAndUpdate(_id, dto)
   }
+
+  @Delete(':_id')
+  async findByIdAndDelete(@Param('_id') _id: ObjectId) {
+    return await this.albumService.findByIdAndDelete(_id)
+  }
 }

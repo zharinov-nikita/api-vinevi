@@ -18,4 +18,8 @@ export class AlbumService {
   async find(): Promise<Album[]> {
     return await this.albumModel.find()
   }
+
+  async findById(_id: ObjectId): Promise<Album> {
+    return await this.albumModel.findById({ _id })
+  }
 }

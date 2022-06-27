@@ -39,4 +39,9 @@ export class TrackController {
   ): Promise<Track> {
     return await this.trackService.findByIdAndUpdate(_id, dto)
   }
+
+  @Delete(':_id')
+  async findByIdAndDelete(@Param('_id') _id: ObjectId) {
+    return await this.trackService.findByIdAndDelete(_id)
+  }
 }

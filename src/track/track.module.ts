@@ -8,5 +8,6 @@ import { TrackService } from './track.service'
   imports: [
     MongooseModule.forFeature([{ name: Track.name, schema: TrackSchema }]),
   ],
+  controllers: [TrackController],
 })
 export class TrackModule {}

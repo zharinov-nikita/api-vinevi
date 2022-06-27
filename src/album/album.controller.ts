@@ -26,4 +26,9 @@ export class AlbumController {
   async find(): Promise<Album[]> {
     return await this.albumService.find()
   }
+
+  @Get(':_id')
+  async findById(@Param('_id') _id: ObjectId): Promise<Album> {
+    return await this.albumService.findById(_id)
+  }
 }

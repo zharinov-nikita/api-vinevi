@@ -14,4 +14,8 @@ export class TrackService {
   async create(dto: CreateTrackDto): Promise<Track> {
     return await this.trackModel.create(dto)
   }
+
+  async find(): Promise<Track[]> {
+    return await this.trackModel.find()
+  }
 }

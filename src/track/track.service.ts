@@ -22,4 +22,8 @@ export class TrackService {
   async findById(_id: ObjectId): Promise<Track> {
     return await this.trackModel.findById({ _id })
   }
+
+  async findByIdAndUpdate(_id: ObjectId, dto: UpdateTrackDto): Promise<Track> {
+    return await this.trackModel.findByIdAndUpdate(_id, dto, { new: true })
+  }
 }

@@ -31,4 +31,12 @@ export class TrackController {
   async findById(@Param('_id') _id: ObjectId): Promise<Track> {
     return await this.trackService.findById(_id)
   }
+
+  @Patch(':_id')
+  async findByIdAndUpdate(
+    @Param('_id') _id: ObjectId,
+    @Body() dto: UpdateTrackDto
+  ): Promise<Track> {
+    return await this.trackService.findByIdAndUpdate(_id, dto)
+  }
 }
